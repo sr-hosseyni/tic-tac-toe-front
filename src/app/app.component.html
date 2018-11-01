@@ -27,20 +27,22 @@
             </table>
         </div>
         <div class="historyContainer">
-            <h3>Move history</h3>
+            <h4>Move history</h4>
             <table id="history">
                 <thead>
                     <tr>
                         <th>#</th>
+                        <th>player</th>
                         <th>x</th>
                         <th>y</th>
-                        <th>player</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let move of moveHistory; let i = index">
                         <th>{{i}}</th>
-                        <td *ngFor="let element of move">{{element}}</td>
+                        <td>{{move[2]}}</td>
+                        <td>{{move[0]}}</td>
+                        <td>{{move[1]}}</td>
                     </tr>
                 </tbody>
             </table>

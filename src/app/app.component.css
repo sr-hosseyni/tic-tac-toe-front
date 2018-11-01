@@ -22,7 +22,7 @@ table#board {
     margin: auto;
     font-family: sans-serif;
     font-size: 48px;
-    box-shadow: gray 5px 5px;
+    box-shadow: #CCCCCC 0px 0px 2px 2px;
 }
 
 table#board td {
@@ -61,7 +61,8 @@ button {
 }
 
 table#history {
-    border: solid 2px black;
+    border: solid 2px gray;
+    color: gray;
     margin: auto;
     font-family: sans-serif;
     font-size: 12px;
@@ -71,7 +72,7 @@ table#history {
 table#history td {
     width: 20px;
     height: 20px;
-    border: solid 1px black;
+    border: solid 1px gray;
     font-weight: bold;
 }
 
@@ -80,4 +81,9 @@ table#history th {
     height: 20px;
     border: solid 1px gray;
     font-weight: bold;
+    padding: 5px 10px;
+}
+
+div.historyContainer h4 {
+    color: gray;
 }

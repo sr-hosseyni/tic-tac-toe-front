@@ -123,8 +123,8 @@ export class AppComponent {
             [[0, 2], [1, 1], [2, 0]],
         ];
 
-//        this.turn = Math.random() >= 0.5;
-        this.turn = false;
+        this.turn = Math.random() >= 0.5;
+//        this.turn = false;
 
         this.moveHistory = [];
     }
