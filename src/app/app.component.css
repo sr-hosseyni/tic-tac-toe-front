@@ -1,0 +1,83 @@
+div.panel {
+    width: 100%;
+}
+
+div.statusContainer {
+    float: left;
+    width: 20%;
+}
+
+div.boardContainer {
+    float: left;
+    width: 60%;
+}
+
+div.historyContainer {
+    float: left;
+    width: 20%;
+}
+
+table#board {
+    border: solid 3px black;
+    margin: auto;
+    font-family: sans-serif;
+    font-size: 48px;
+    box-shadow: gray 5px 5px;
+}
+
+table#board td {
+    width: 80px;
+    height: 80px;
+    border: solid 2px black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+table#board td.win-series {
+    background: forestgreen;
+    color: white;
+}
+
+table#board td.lose-series {
+    background: crimson;
+    color: white;
+}
+
+table#board.draw {
+    background: gold;
+}
+
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 4px 2px;
+}
+
+table#history {
+    border: solid 2px black;
+    margin: auto;
+    font-family: sans-serif;
+    font-size: 12px;
+    border-collapse: collapse;
+}
+
+table#history td {
+    width: 20px;
+    height: 20px;
+    border: solid 1px black;
+    font-weight: bold;
+}
+
+table#history th {
+    width: 20px;
+    height: 20px;
+    border: solid 1px gray;
+    font-weight: bold;
+}

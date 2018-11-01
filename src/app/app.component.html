@@ -1,20 +1,49 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+    <h1>
+        Tic Tac Toe
+    </h1>
+    <div class="panel">
+        <div class="statusContainer">
+            <div *ngIf="state === 0;then content else other_content"></div>
+            <ng-template #content>
+                <h2 *ngIf="turn">Your Turn</h2>
+                <h2 *ngIf="!turn">Opponent Turn</h2>
+            </ng-template>
+            <ng-template #other_content>
+                <h2 *ngIf="state === 1">You win</h2>
+                <h2 *ngIf="state === 2">Opponent win</h2>
+                <h2 *ngIf="state === 3">Finished draw</h2>
+                <button (click)="restart()">Again</button>
+            </ng-template>
+        </div>
+        <div class="boardContainer">
+            <table id='board' [className]="state === 3 ? 'draw' : ''">
+                <tbody>
+                    <tr *ngFor="let row of board; let x = index">
+                        <td *ngFor="let element of row; let y = index" (click)="move(x, y)" [className]="style[x][y]">{{element}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="historyContainer">
+            <h3>Move history</h3>
+            <table id="history">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>x</th>
+                        <th>y</th>
+                        <th>player</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let move of moveHistory; let i = index">
+                        <th>{{i}}</th>
+                        <td *ngFor="let element of move">{{element}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
